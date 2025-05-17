@@ -9,8 +9,7 @@ from first_app.forms import EmployeeForm
 from first_app.utils import is_user_superuser
 from first_app.mixins import UserIsAdminMixin
 from first_app.forms import SalaryForm
-
-from salary_calculator import CalculateMonthRateSalary
+from first_app.salary_calculator import CalculateMonthRateSalary
 
 
 class EmployeeListView(ListView):
