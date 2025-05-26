@@ -87,30 +87,36 @@ class EmployeeDetailsView(UserIsAdminMixin, DetailView):
         return employee
 
 
-
 class SalaryCalculatorView(UserIsAdminMixin, FormView):
-    template_name = "salary_calculator.html"
+    template_name = 'salary_calculator.html'
     form_class = SalaryForm
 
     def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request, self.template_name, context={'form': form})
+        form = SalaryForm()
+        return render(request, self.template_name, {'form': form})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
     def form_valid(self, form):
         cleaned_data = form.cleaned_data
-        employee = cleaned_data.get("employee")
+        employee = cleaned_data.get('employee')
 
+        calculator = CalculateMonthRateSalary(employee=employee)
 
-        calc = CalculateMonthRateSalary(employee=employee)
-        days = {day: day_type for day, day_type in cleaned_data.items() if day.startswith("day_")}
+        days = {day: day_type for day, day_type in cleaned_data.items() if day.startswith(calculator.day_prefix)}
 
-        salary = calc.calculate_salary(days_dict=days)
-        calc.save_salary(salary, datetime.date.today())
+        month_days = calculator.get_days_count(days_dict=days)
+        salary = calculator.calculate_salary(month_days=month_days)
+
+        calculator.save_salary(salary=salary, date=datetime.date.today())
+
         return render(
             request=self.request,
             template_name=self.template_name,
-            context={'form': form, 'calculated_salary': salary}
+            context={
+                'form': form,
+                'calculated_salary': salary,
+            },
         )
-
-
