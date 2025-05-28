@@ -22,3 +22,11 @@ class RequestStatisticMiddleware(MiddlewareMixin):
             stats, is_created = RequestStatistics.objects.get_or_create(user=request.user)
             stats.requests += 1
             stats.save()
+
+    def process_exception(self, request, exception):
+        stat, _ = RequestStatistics.objects.get_or_create(
+            path=request.path,
+            method=request.method,
+        )
+        stat.exceptions += 1
+        stat.save()
