@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block content %}
   <h1>Salary calculator</h1>
 
@@ -14,7 +14,7 @@
 
   {% if calculated_salary %}
     <div class="alert alert-success mt-4" role="alert">
-      <h4 class="alert-heading">Calculated Salary</h4>
+      <h4 class="alert-heading">{% trans 'Calculated Salary' %}</h4>
       <p>{{ calculated_salary }}</p>
     </div>
   {% endif %}
@@ -57,7 +57,7 @@
     </div>
 
     <div class="form-group mt-4">
-      <button type="submit" class="btn btn-primary">Calculate Salary</button>
+      <button type="submit" class="btn btn-primary">{% trans 'Calculate Salary' %}</button>
     </div>
   </form>
 {% endblock %}
