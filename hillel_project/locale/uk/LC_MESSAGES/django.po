@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 13:48+0000\n"
+"POT-Creation-Date: 2025-06-01 16:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,9 +20,26 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: first_app/models/department.py:5
+msgid "Name department"
+msgstr "Назва відділу"
+
+#: first_app/models/department.py:6
+msgid "Parent department"
+msgstr "Батьківський відділ"
+
+#: first_app/models/department.py:9
+msgid "Department"
+msgstr "Відділ"
+
+#: first_app/models/department.py:10
+msgid "Departments"
+msgstr "Відділи"
+
 #: first_app/models/position.py:5
 msgid "Title"
-msgstr ""
+msgstr "Назва"
 
 #: first_app/models/position.py:9
 msgid "Job Description"
@@ -79,6 +96,10 @@ msgstr "Зберегти"
 #: templates/employee_list.html:4
 msgid "Employee List"
 msgstr "Список співробітників"
+
+#: templates/employee_list.html:10
+msgid "Search"
+msgstr "Пошук"
 
 #: templates/employee_list.html:12
 msgid "Filter"

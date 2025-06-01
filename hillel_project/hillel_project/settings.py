@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'general',
     'first_app',
+    'modeltranslation',
 
 ]
 
@@ -110,6 +110,7 @@ LANGUAGES = [
     ("en", "English"),
     ("uk", "Ukrainian"),
 ]
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 LOCALE_PATHS = (
     BASE_DIR / "locale",

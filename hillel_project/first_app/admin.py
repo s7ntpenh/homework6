@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from modeltranslation.admin import TranslationAdmin
 from .models import Employee, Department, Position, Experiment, Article
 
 
@@ -10,12 +10,12 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'parent_department')
+    list_display = ('name', 'parent_department',)
 
 
 @admin.register(Position)
 class PositionAdmin(admin.ModelAdmin):
-    list_display = ("title", "is_manager", "is_active")
+    list_display = ("title", "is_manager", "is_active",)
 
 
 

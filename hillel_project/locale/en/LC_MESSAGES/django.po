@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 13:47+0000\n"
+"POT-Creation-Date: 2025-06-01 16:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: first_app/models/department.py:5
+msgid "Name department"
+msgstr "Name department"
+
+#: first_app/models/department.py:6
+msgid "Parent department"
+msgstr "Parent department"
+
+#: first_app/models/department.py:9
+msgid "Department"
+msgstr "Department"
+
+#: first_app/models/department.py:10
+msgid "Departments"
+msgstr "Departments"
+
 #: first_app/models/position.py:5
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #: first_app/models/position.py:9
 msgid "Job Description"
@@ -76,6 +93,10 @@ msgstr "Save"
 #: templates/employee_list.html:4
 msgid "Employee List"
 msgstr "Employee List"
+
+#: templates/employee_list.html:10
+msgid "Search"
+msgstr "Search"
 
 #: templates/employee_list.html:12
 msgid "Filter"
