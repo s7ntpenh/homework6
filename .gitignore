@@ -5,3 +5,4 @@
 *.log
 *.sqlite3
 poetry.lock
+__pycache__

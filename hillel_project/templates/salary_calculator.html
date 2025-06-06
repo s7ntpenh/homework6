@@ -39,6 +39,8 @@
       {% endif %}
     </div>
 
+  {% load cache %}
+  {% cache 120 salary_fields %}
     <div class="row">
       {% for field in form %}
         {% if forloop.counter > 1 %}
@@ -55,6 +57,7 @@
         {% endif %}
       {% endfor %}
     </div>
+  {% endcache %}
 
     <div class="form-group mt-4">
       <button type="submit" class="btn btn-primary">Calculate Salary</button>

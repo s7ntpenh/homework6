@@ -26,3 +26,16 @@ body {
     padding: $employee-list-padding;
     border: 1px solid $employee-list-border-color;
 }
+
+.messages {
+    list-style: none;
+    padding: 10px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
